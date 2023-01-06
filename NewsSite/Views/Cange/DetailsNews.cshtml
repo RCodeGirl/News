@@ -1,0 +1,16 @@
+﻿@model NewsSite.Models.New
+@{
+    ViewBag.Title = Model.Name;
+}
+<h2> @Model.Name</h2>
+<div>
+    <div class="col-lg">
+        <img class="img-thumbnail" src="@Model.img" />
+        <h2>@Model.Name</h2>
+        <p>@Model.shortText</p>
+        <p>@Model.LongText</p>
+        <p>@Model.Time.ToString("hh:mm")</p>
+        <a class="btn btn-outline-success" asp-action="EditNews" asp-controller="Cange" asp-route-id="@Model.Id">Изменить</a>
+        <a class="btn btn-outline-danger" asp-action="DeleteNews" asp-controller="Cange" asp-route-id="@Model.Id">Удалить</a>
+    </div>
+</div>

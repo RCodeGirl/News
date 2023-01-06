@@ -1,0 +1,20 @@
+﻿@model NewsSite.ViewModels.HomeViewModel
+
+
+<h1>Главные новости </h1>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var news in Model.GetFavoriteNews)
+        {
+        <div class=" col-lg-4">
+            <img class="img-thumbnail" src="@news.img" alt="@news.Name" />
+            <h2>@news.Name</h2>
+            <p>@news.shortText</p>
+            <p>@news.Time.ToString("hh:mm")</p>
+            <p> <a class="btn btn-warning" asp-action="DetailsNews" asp-controller="Cange" asp-route-id="@news.Id">Подробнее</a></p>
+            
+        </div>
+        }
+    }
+</div>

@@ -1,0 +1,17 @@
+﻿@model NewsSite.Models.Category
+<title>@ViewBag.Title</title>
+
+<link href="~/css/bootstrap.min.css " rel="stylesheet" type="text/css" />
+<link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+
+<form asp-action="EditCategory" asp-controller="Cange" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <label asp-for="CategoryName" class="control-label">Название категории:</label>
+        <input type="text" asp-for="CategoryName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-dark" />
+
+    </div>
+</form>

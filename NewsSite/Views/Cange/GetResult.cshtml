@@ -1,0 +1,17 @@
+﻿@model IEnumerable<NewsSite.Models.New>
+@{
+    ViewBag.Title = "Все новости:";
+}
+
+<a class="btn btn-primary btn-sm" asp-action="AddNews">Добавить Новость</a>
+@foreach (var item in Model)
+{ <div class="col-lg">
+    <img class="img-thumbnail" src="@item.img"/>
+    <h2>@item.Name</h2>
+    <p>@item.shortText</p>
+    <p>время публикации: @item.Time.ToString("hh:mm")</p>
+    <a class="btn btn-outline-primary" asp-action="DetailsNews" asp-controller="Cange" asp-route-id="@item.Id">Подробнее</a>
+    <a class="btn btn-outline-success" asp-action="EditNews" asp-controller="Cange" asp-route-id="@item.Id">Изменить</a>
+    <a class="btn btn-outline-danger" asp-action="DeleteNews" asp-controller="Cange" asp-route-id="@item.Id">Удалить</a>
+    </div>
+    }

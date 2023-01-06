@@ -1,0 +1,15 @@
+﻿@model IEnumerable<NewsSite.Models.Category>
+@{
+    ViewBag.Title = "Все Категории";
+}
+<a class="btn btn-primary btn-sm" asp-action="AddCategories">Добавить Категорию</a>
+@foreach (var item in Model)
+{
+
+    <h2>@item.CategoryName</h2>
+    
+    
+    <a class="btn btn-outline-success" asp-action="EditCategory" asp-controller="Cange" asp-route-id="@item.Id">Изменить</a>
+    <a class="btn btn-outline-danger" asp-action="DeleteCategory" asp-controller="Cange" asp-route-id="@item.Id">Удалить</a>
+
+}
